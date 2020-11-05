@@ -2,12 +2,14 @@ package mvc;
 
 import mvc.controller.StudentController;
 import mvc.model.Student;
+import mvc.model.repository.IStudentRepository;
+import mvc.model.repository.StudentRepository;
 import mvc.view.StudentView;
 
 public class Main {
 
     public static void main(String[] args) {
-        Student model = retriveStudentFromDatabase();
+        IStudentRepository model = new StudentRepository();
         StudentView view = new StudentView();
         StudentController controller = new StudentController(model, view);
 
@@ -17,7 +19,6 @@ public class Main {
         controller.updateView();
 
     }
-
 
     private static Student retriveStudentFromDatabase(){
         Student student = new Student();

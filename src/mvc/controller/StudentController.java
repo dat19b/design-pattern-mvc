@@ -1,14 +1,15 @@
 package mvc.controller;
 
 import mvc.model.Student;
+import mvc.model.repository.IStudentRepository;
 import mvc.view.StudentView;
 
 public class StudentController {
 
-    private Student model;
+    private IStudentRepository model;
     private StudentView view;
 
-    public StudentController(Student model, StudentView view){
+    public StudentController(IStudentRepository model, StudentView view){
         this.model = model;
         this.view = view;
     }

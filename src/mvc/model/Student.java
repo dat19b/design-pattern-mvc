@@ -1,5 +1,6 @@
 package mvc.model;
 
+// entity
 public class Student {
 
     private String rollNo;
