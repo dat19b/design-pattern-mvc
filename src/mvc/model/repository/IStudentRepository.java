@@ -4,7 +4,7 @@ import mvc.model.Student;
 
 public interface IStudentRepository {
 
-    Student retriveStudentFromDatabase();
+    //Student retriveStudentFromDatabase();
 
     String getName();
 

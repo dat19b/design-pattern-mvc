@@ -6,15 +6,20 @@ import java.util.List;
 
 public class StudentRepository implements IStudentRepository {
 
-    Student student = new Student();
-    List<Student> students;
+    Student student;
 
+    public StudentRepository(){
+        student = new Student();
+        student.setName("Robert");
+        student.setRollNo("10");
+    }
+/*
     public Student retriveStudentFromDatabase() {
         student.setName("Robert");
         student.setRollNo("10");
         return student;
     }
-
+*/
     public String getName(){
         return student.getName();
     }
@@ -25,7 +30,7 @@ public class StudentRepository implements IStudentRepository {
 
     @Override
     public void setName(String name) {
-
+        student.setName(name);
     }
 
     @Override
