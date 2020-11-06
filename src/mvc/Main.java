@@ -11,12 +11,15 @@ public class Main {
     public static void main(String[] args) {
         IStudentRepository model = new StudentRepository();
         StudentView view = new StudentView();
+
+        model.addObserver(view);
+
         StudentController controller = new StudentController(model, view);
 
         // eventloop
         controller.updateView();
         controller.setStudentName("Claus");
-        controller.updateView();
+        //controller.updateView();
 
     }
 

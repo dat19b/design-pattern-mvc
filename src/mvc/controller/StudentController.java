@@ -15,7 +15,7 @@ public class StudentController {
     }
 
     public void setStudentName(String name){
-        model.setName(name);
+        model.setName(this, name);
     }
 
     public String getStudentName(){
