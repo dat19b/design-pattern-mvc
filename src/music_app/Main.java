@@ -21,10 +21,13 @@ public class Main {
         boolean eventloop = true;
         while(eventloop){
             int x = view.getNewSong();
-            if (x != -1){
-                controller.updateView(x);
-            } else {
+            if (x == -1){
+                System.out.println("GOODBYE!");
                 eventloop = false;
+            } else if(x == -2) {
+                controller.addSong();
+            } else {
+                controller.updateView(x);
             }
         }
 

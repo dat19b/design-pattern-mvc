@@ -7,7 +7,7 @@ import java.util.List;
 
 public class SongRepository implements ISongRepository {
 
-    List<Song> songs;
+    List<Song> songs; // DB
 
     public SongRepository(){
         songs = new ArrayList<>();
@@ -20,4 +20,9 @@ public class SongRepository implements ISongRepository {
     public Song getSong(int id) {
         return songs.get(id);
     }
+
+    public void addSong(Song song){
+        songs.add(song);
+    }
+
 }
