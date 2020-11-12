@@ -5,6 +5,8 @@ import mvc.model.repository.IObserver;
 
 public class StudentView implements IObserver {
 
+
+
     public void printStudentDetails(String studentName, String studentRollNo){
         System.out.println("Student: ");
         System.out.println("Name: " + studentName);

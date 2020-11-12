@@ -18,4 +18,6 @@ public interface IStudentRepository {
     void addObserver(IObserver s);
 
     void removeObserver(IObserver s);
+
+
 }

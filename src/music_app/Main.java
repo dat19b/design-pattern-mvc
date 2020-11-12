@@ -12,6 +12,8 @@ public class Main {
         ISongRepository model = new SongRepository();
         // view
         View view = new View();
+
+        model.addObserver(view);
         // controller
         SongController controller = new SongController(model, view);
 

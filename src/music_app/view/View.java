@@ -2,10 +2,11 @@ package music_app.view;
 
 import music_app.controller.SongController;
 import music_app.model.Song;
+import music_app.repository.IObserver;
 
 import java.util.Scanner;
 
-public class View {
+public class View implements IObserver {
 
     SongController controller = new SongController(null, null);
 
@@ -33,5 +34,8 @@ public class View {
     }
 
 
-
+    @Override
+    public void update() {
+        System.out.println("Model has been updated");
+    }
 }
