@@ -4,15 +4,15 @@ import music_app.model.Song;
 import music_app.repository.ISongRepository;
 import music_app.view.View;
 
-public class SongController implements ISongsController {
+public class LoggedInSongController implements ISongsController {
 
     private ISongRepository model;
     private View view;
 
-    public SongController(ISongRepository model, View view){
+    public LoggedInSongController(ISongRepository model, View view){
         this.model = model;
         this.view = view;
-        view.setSongController(this); // lav en reference til denne controller i view.
+        view.setSongController(this); // dependency injection  / strategy pattern
     }
 
     public void updateView(int id){
@@ -20,10 +20,9 @@ public class SongController implements ISongsController {
     }
 
     public void addSong(){
-        System.out.println("SORRY, NOT LOGGED IN");  // jeg må ikke kunne added en ny song hvis jeg ikke er logged in.
-        //view.addSong();
+        view.addSong(); // når jeg er logged in må jeg gerne kunne add song
     }
     public void newSong(int id, String title){
-        //model.addSong(new Song(id, title));
+        model.addSong(new Song(id, title));
     }
 }
