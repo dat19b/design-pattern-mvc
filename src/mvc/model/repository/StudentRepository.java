@@ -1,5 +1,6 @@
 package mvc.model.repository;
 
+import mvc.controller.IStudentController;
 import mvc.controller.StudentController;
 import mvc.model.Student;
 import twitter.observers.ISubscriber;
@@ -36,9 +37,14 @@ public class StudentRepository implements IStudentRepository {
     }
 
     @Override
-    public void setName(StudentController sc, String name) {
+    public void setName(IStudentController cs, String name) {
         student.setName(name);
-        tell(sc);
+        for (IObserver s : observers){
+            s.update();
+        }
+
+
+        //tell(sc);
     }
 
     @Override

@@ -10,11 +10,11 @@ public class StudentView implements IObserver {
     public void printStudentDetails(String studentName, String studentRollNo){
         System.out.println("Student: ");
         System.out.println("Name: " + studentName);
-        System.out.println("Roll No: " + studentRollNo);
+        System.out.println("CPR: " + studentRollNo);
     }
 
     @Override
-    public void update(StudentController controller) {
+    public void update() {
         System.out.println("I Have been notified");
         controller.updateView();
     }

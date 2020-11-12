@@ -3,12 +3,13 @@ package music_app.view;
 import music_app.controller.SongController;
 import music_app.model.Song;
 import music_app.repository.IObserver;
+import music_app.repository.ISongRepository;
 
 import java.util.Scanner;
 
 public class View implements IObserver {
 
-    SongController controller = new SongController(null, null);
+    ISongController songController;
 
     public void printSongDetails(Song song){
         System.out.println("Now playing: ");

@@ -4,5 +4,5 @@ import mvc.controller.StudentController;
 
 public interface IObserver {
 
-    void update(StudentController controller);
+    void update();
 }

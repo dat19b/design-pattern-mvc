@@ -4,7 +4,7 @@ import mvc.model.Student;
 import mvc.model.repository.IStudentRepository;
 import mvc.view.StudentView;
 
-public class StudentController {
+public class StudentController implements IStudentController {
 
     private IStudentRepository model;
     private StudentView view;

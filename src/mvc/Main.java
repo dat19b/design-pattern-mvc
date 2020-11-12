@@ -1,5 +1,6 @@
 package mvc;
 
+import mvc.controller.IStudentController;
 import mvc.controller.StudentController;
 import mvc.model.Student;
 import mvc.model.repository.IStudentRepository;
@@ -14,7 +15,7 @@ public class Main {
 
         model.addObserver(view);
 
-        StudentController controller = new StudentController(model, view);
+        IStudentController controller = new StudentController(model, view);
 
         // eventloop
         controller.updateView();
